@@ -551,6 +551,17 @@
             overflow: hidden;
             text-overflow: ellipsis;
         }
+
+        .footer {
+            width: 100%;
+            text-align: center;
+            margin-top: 18px;
+            padding: 14px 12px;
+            font-size: 13px;
+            font-weight: 800;
+            color: var(--muted);
+            border-top: 1px solid var(--stroke);
+        }
     </style>
 </head>
 
@@ -635,17 +646,15 @@
         <!-- TABLE -->
         <div class="panel">
             <div class="panel-title">
-                <h2>Jadwal</h2>
-                <div style="font-size:12px;color:var(--muted);font-weight:800;">
-                    👉 Geser tabel ke kiri/kanan di HP. <br>
-                    👉 Untuk pindah nama: klik nama → pilih jam baru.
-                </div>
             </div>
 
             <div class="table-wrap">
                 <table id="scheduleTable"></table>
             </div>
         </div>
+        <footer class="footer">
+            Dibuat oleh <b>M.Alfin Pathul Mukarrobin</b> © <span id="yearNow"></span>
+        </footer>
 
     </div>
 
@@ -990,6 +999,7 @@
             applySettingsUI();
             renderTable();
         })();
+        document.getElementById("yearNow").textContent = new Date().getFullYear();
     </script>
 
 </body>
